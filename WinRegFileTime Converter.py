@@ -15,7 +15,7 @@ def beautiful_print(value):
 
 if __name__ == "__main__":
     with winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE) as hkey_lm:
-        with winreg.OpenKey(hkey_lm, r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles\{B9D26F3A-B591-4F81-BFBD-6CDA6322D8AB}", 0, winreg.KEY_ALL_ACCESS) as current_key:
+        with winreg.OpenKey(hkey_lm, r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles\{}", 0, winreg.KEY_ALL_ACCESS) as current_key:
             dateCreated = winreg.QueryValueEx(current_key, "DateCreated")[0]
             dateLastConnected = winreg.QueryValueEx(current_key, "DateLastConnected")[0]
             print("DateCreated: ", end="")
@@ -23,7 +23,7 @@ if __name__ == "__main__":
             print("DateLastConnected: ", end="")
             beautiful_print(convertation(dateLastConnected))
             print()
-        with winreg.OpenKey(hkey_lm, r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles\{E26FD9AC-AD4E-4171-B4CD-4C34F91C5E00}", 0, winreg.KEY_ALL_ACCESS) as current_key:
+        with winreg.OpenKey(hkey_lm, r"SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles\{}", 0, winreg.KEY_ALL_ACCESS) as current_key:
             dateCreated = winreg.QueryValueEx(current_key, "DateCreated")[0]
             dateLastConnected = winreg.QueryValueEx(current_key, "DateLastConnected")[0]
             print("DateCreated: ", end="")
